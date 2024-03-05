@@ -1,24 +1,33 @@
+//Feedback: variable names should be more descriptive
 let background;
 let backgroundWidth = 800;
-let backgroundHeight = 550;
+let backgroundHeight = 850;
+
 let context;
+
 let pongWidth = 160;
 let pongHeight = 20;
 let pongMoveX = 0;
+
 let ballWidth = 20;
 let ballHeight = 20;
-let ballVelocityX = 5;
-let ballVelocityY = 4;
+let ballVelocityX = 3;
+let ballVelocityY = 3;
+
 let brickArray = [];
 let brickWidth = 83;
 let brickHeight = 20;
 let brickColumns = 8;
+
 let brickRows = 3;
 let brickMax = 6;
 let brickCount = 0;
 let brickX = 15;
 let brickY = 30;
+
+//feedback: dont assign the random value to a variable here, do it when you need the value
 let rand = Math.floor(Math.random() * 6);
+
 let score = 0;
 let gameOver = false;
 
@@ -42,6 +51,8 @@ let pong = {
     height : pongHeight,
 }
 
+//feedback: update function shouldnt have so many ifs inside, 
+//instead try to write different functions for each thing done inside the update function (e.g.changeColors, moveBall) and just call them in the update function
 function update(){
     requestAnimationFrame(update);
     if (gameOver){
